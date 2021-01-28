@@ -1,0 +1,42 @@
+version: "1"
+ 
+services:
+  miservicio_mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=asociacionOftalmologica
+      - MYSQL_ROOT_PASSWORD=vertrigo
+      - MYSQL_USER=alejandro
+      - MYSQL_PASSWORD=vertrigo
+    volumes:
+      # Montamos un volumen para MySQL para no perder los datos de bd
+      - ./mysqlData:/var/lib/mysql
+      - ./initDb:/docker-entrypoint-initdb.d
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+  phpmyadmin:
+      depends_on:
+       - miservicio_mysql
+      image: phpmyadmin/phpmyadmin
+      container_name: phpmyadmin
+      restart: always
+      ports:
+       - '8080:80'
+      environment:
+        PMA_HOST: miservicio_mysql
+      
+
+  miservicio_php:
+    image: php:7-apache
+    volumes:
+      # Montamos nuestra web desde fuera en el directorio web del contenedor
+      - ./www/:/var/www/html
+    
+    expose:
+      - 80
+    ports:
+      - 80:80
+    links: 
+      - miservicio_mysql

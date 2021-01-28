@@ -1,0 +1,67 @@
+.tabnr{
+top:-15px;
+}
+
+.tabnr2{
+top:-18px;
+}
+
+
+div.footerwrapper ul {
+
+list-style-position:outside ;
+
+}
+
+
+.orangeslide{  padding:12px 0px 12px 0px;}
+.sbtn2{  width:50px;}
+
+
+
+.errormessage span{margin-top:-23px; margin-right:20px;}
+.alertmessage span{margin-top:-23px; margin-right:20px;}
+.alertinformation span{margin-top:-23px; margin-right:20px;}
+.alertinformation span{margin-top:-23px; margin-right:20px;}
+.alertcongratulations span{margin-top:-23px; margin-right:20px;}
+
+
+#prev_btn img{margin-top:8px;}
+#next_btn img{margin-top:8px;}
+
+#left_btn img{margin-top:6px;}
+#right_btn img{margin-top:6px;}
+
+#leftsquare_btn img{margin-top:9px;}
+#square_btn span {top:4px;}
+#rightsquare_btn img{margin-top:9px;}
+
+
+@media screen and (max-width:820px) {
+
+.customw{
+top:75px !important;
+}
+
+
+
+.titanicsubtitle{
+width:290px;
+}
+
+
+}
+
+
+@media screen and (max-width:520px) {
+
+
+.customw{
+top:175px !important;
+}
+
+
+
+
+
+}

@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION;TYPE=WORK:3.0
+FN:Sales Department
+N:Sales Department;;;;
+PROFILE:VCARD
+ADR:;;303 S Broadway\, Suite 200-341;Denver;CO;80209;USA
+EMAIL:sales@site5.com
+ORG:Site5
+URL:http://www.site5.com
+END:VCARD

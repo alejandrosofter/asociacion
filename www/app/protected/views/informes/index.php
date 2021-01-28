@@ -1,0 +1,2 @@
+<h1>INFORME DE PRÁCTICAS</h1>
+Seleccione por favor el informe que desea: <?=CHtml::link('Obra Social','index.php?r=informes/detalleObrasSociales')?>, <?=CHtml::link('Prácticas','index.php?r=informes/practicas')?>, <?=CHtml::link('Profesionales','index.php?r=informes/detalleProfesional')?><br>
