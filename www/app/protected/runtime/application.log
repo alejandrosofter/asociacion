@@ -5577,3 +5577,1009 @@ Stack trace:
 REQUEST_URI=/appAsociacionGestor/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
 HTTP_REFERER=http://localhost/appAsociacionGestor/app/
 ---
+2021/01/28 19:51:48 [error] [exception.CException] CException: CAssetManager.basePath "/var/www/html/app/assets" es inválido. Verifique que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web. in /var/www/html/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /var/www/html/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/var/www/html/a...')
+#1 /var/www/html/framework/web/CAssetManager.php(219): CAssetManager->getBasePath()
+#2 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(458): CAssetManager->publish('/var/www/html/a...', false, -1, true)
+#3 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(163): Bootstrap->getAssetsUrl()
+#4 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(124): Bootstrap->registerAssetCss('bootstrap.css')
+#5 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(102): Bootstrap->registerCoreCss()
+#6 /var/www/html/framework/base/CModule.php(388): Bootstrap->init()
+#7 /var/www/html/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#8 /var/www/html/framework/base/CApplication.php(146): CModule->preloadComponents()
+#9 /var/www/html/framework/YiiBase.php(127): CApplication->__construct(Array)
+#10 /var/www/html/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/html/a...')
+#11 /var/www/html/app/index.php(13): YiiBase::createWebApplication('/var/www/html/a...')
+#12 {main}
+REQUEST_URI=/app/
+---
+2021/01/28 19:52:03 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:52:03 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:52:06 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:07 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:08 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:09 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:09 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:10 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:15 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:15 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 19:54:17 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasProfesional))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('FacturasProfesi...')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/FacturasProfesionalController.php(108): CActiveRecord->__construct()
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasProfesionalController->actionCreate()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('create')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('facturasProfesi...')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=facturasProfesional/create
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:14:59 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/SiteController.php(104): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): SiteController->actionAuditoriaPendientes_()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/framework/web/CWebApplication.php(276): CController->run('auditoriaPendie...')
+#14 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('site/auditoriaP...')
+#15 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/html/app/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/app/index.php?r=site/auditoriaPendientes_&ano=2021&agrupa=true
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:14:59 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/SiteController.php(133): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): SiteController->actionConsultaPendientesAnual()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/framework/web/CWebApplication.php(276): CController->run('consultaPendien...')
+#14 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('site/consultaPe...')
+#15 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/html/app/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/app/index.php?r=site/consultaPendientesAnual&ano=2021&agrupa=true&agrupaOs=true
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:14:59 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/SiteController.php(78): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): SiteController->actionGetAnual()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/framework/web/CWebApplication.php(276): CController->run('getAnual')
+#14 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('site/getAnual')
+#15 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/html/app/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/app/index.php?r=site/getAnual&ano=2021
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:15:02 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:01 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:01 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:02 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:02 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:03 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:15 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:26:16 [error] [exception.CDbException] CDbException: CDbConnection falló al abrir la conexion a la base de datos: could not find driver in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 21:31:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: could not find driver' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:31:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: could not find driver' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:31:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: could not find driver' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:59:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2005] Unknown MySQL server host '127.0.0.1:3306' (2)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:59:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2005] Unknown MySQL server host '127.0.0.1:3306' (2)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 21:59:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2005] Unknown MySQL server host '127.0.0.1:3306' (2)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 22:00:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 22:01:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2005] Unknown MySQL server host '127.0.0.1:3306' (110)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 22:01:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[HY000] [2005] Unknown MySQL server host 'localhost:3306' (110)' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/
+---
+2021/01/28 22:02:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'australOftalmologia'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 22:02:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'australOftalmologia'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 22:05:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'australOftalmologia'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Liquidaciones))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Liquidaciones')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/LiquidacionesController.php(163): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): LiquidacionesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('liquidaciones')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=liquidaciones
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---
+2021/01/28 22:06:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'australOftalmologia'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Profesionales))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Profesionales')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/ProfesionalesController.php(210): CActiveRecord->__construct('search')
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): ProfesionalesController->actionIndex()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('profesionales')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=profesionales
+HTTP_REFERER=http://localhost/app/index.php?r=site/auditoria
+---

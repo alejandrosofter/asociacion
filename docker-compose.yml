@@ -1,10 +1,20 @@
-version: "1"
+version: "3"
  
 services:
+  dockerhost-web:
+    build: imagenServer/
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/var/www/html
+    container_name: dockerhost_web
+    links:
+      - miservicio_mysql:db
+
   miservicio_mysql:
     image: mysql:5.7
     environment:
-      - MYSQL_DATABASE=asociacionOftalmologica
+      - MYSQL_DATABASE=australOftalmologia
       - MYSQL_ROOT_PASSWORD=vertrigo
       - MYSQL_USER=alejandro
       - MYSQL_PASSWORD=vertrigo
@@ -28,15 +38,15 @@ services:
         PMA_HOST: miservicio_mysql
       
 
-  miservicio_php:
-    image: php:7-apache
-    volumes:
-      # Montamos nuestra web desde fuera en el directorio web del contenedor
-      - ./www/:/var/www/html
+  # miservicio_php:
+  #   image: php:5-apache
+  #   volumes:
+  #     # Montamos nuestra web desde fuera en el directorio web del contenedor
+  #     - ./www/:/var/www/html
     
-    expose:
-      - 80
-    ports:
-      - 80:80
-    links: 
-      - miservicio_mysql
+  #   expose:
+  #     - 80
+  #   ports:
+  #     - 80:80
+  #   links: 
+  #     - miservicio_mysql
