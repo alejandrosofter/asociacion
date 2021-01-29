@@ -1,17 +1,16 @@
 version: "3"
  
 services:
-  dockerhost-web:
+  host:
     build: imagenServer/
     ports:
       - 80:80
     volumes:
       - ./www:/var/www/html
-    container_name: dockerhost_web
     links:
-      - miservicio_mysql:db
+      - mysql:db
 
-  miservicio_mysql:
+  mysql:
     image: mysql:5.7
     environment:
       - MYSQL_DATABASE=australOftalmologia
@@ -26,16 +25,17 @@ services:
       - 3306
     ports:
       - 3306:3306
+    command: mysqld --sql_mode="" --character-set-server=utf8 --collation-server=utf8_slovenian_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
+    restart: on-failure
   phpmyadmin:
       depends_on:
-       - miservicio_mysql
+       - mysql
       image: phpmyadmin/phpmyadmin
-      container_name: phpmyadmin
       restart: always
       ports:
        - '8080:80'
       environment:
-        PMA_HOST: miservicio_mysql
+        PMA_HOST: mysql
       
 
   # miservicio_php:
