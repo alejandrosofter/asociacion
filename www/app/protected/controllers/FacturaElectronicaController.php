@@ -29,6 +29,13 @@ class FacturaElectronicaController extends RController
 		$datosComp=FacturaElectronica::model()->getDatosComprobante($_GET['id']);
 		$this->render('datosComprobante',array( 'datosComp'=>$datosComp));
 	}
+	public function actionDatosComprobanteAFIP()
+	{
+		$idTipoComprobante=isset($_GET['idTipoComprobante'])?$_GET['idTipoComprobante']:11;
+		$res= FacturaElectronica::model()->getDatosComprobanteAFIP($_GET['nro'],$idTipoComprobante);
+		echo CJSON::encode($res);
+	}
+	
 	public function actionGetComprobante()
 	{
 		$nro=$_GET['nro'];

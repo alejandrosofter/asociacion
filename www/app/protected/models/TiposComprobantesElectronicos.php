@@ -37,12 +37,12 @@ class TiposComprobantesElectronicos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, codigo', 'required'),
+			array('nombre, codigo,esDebito', 'required'),
 			array('codigo', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('buscar,id, nombre, codigo', 'safe', 'on'=>'search'),
+			array('buscar,id, nombre,esDebito, codigo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +66,7 @@ class TiposComprobantesElectronicos extends CActiveRecord
 			'id' => 'ID',
 			'nombre' => 'Nombre',
 			'codigo' => 'Codigo',
+			'esDebito' => 'Es Debito?',
 		);
 	}
 

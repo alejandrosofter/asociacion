@@ -48,7 +48,7 @@ class NotasCredito extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array("anulacion","safe"),
-			array('comprobanteAsociado', 'numerical', 'integerOnly'=>true),
+			array('comprobanteAsociado,comprobanteAsociado_tipoComprobante', 'numerical', 'integerOnly'=>true),
 			array('idObraSocial, detalle,idTipoComprobanteElectronico, fecha,importe', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -82,7 +82,8 @@ class NotasCredito extends CActiveRecord
 			'idObraSocial' => 'Obra Social',
 			'importe' => '$ Importe',
 			'detalle' => 'Detalle',
-			'comprobanteAsociado' => 'Nro Comprobante Asociado',
+			'comprobanteAsociado' => 'Nro Comp. Asociado',
+			'comprobanteAsociado_tipoComprobante' => 'Tipo Comp.',
 			'idTipoComprobanteElectronico' => 'Tipo Comprobante',
 		);
 	}
@@ -212,10 +213,10 @@ class NotasCredito extends CActiveRecord
 			// )
 );
 		print_r($data);
-		if($TIPO_COMPROBANTE==212 ||$TIPO_COMPROBANTE==213){
+		// if($TIPO_COMPROBANTE==212 ||$TIPO_COMPROBANTE==213){
 			$comprobanteAsociado=array();
-			$compAsociado=isset($_GET['id'])?FacturaElectronica::model()->getDatosComprobanteNro($model->comprobanteAsociado,$model->idObraSocial,$afip):null;
-			
+			$compAsociado=isset($_GET['id'])?FacturaElectronica::model()->getDatosComprobanteAFIP($model->comprobanteAsociado,$model->comprobanteAsociado_tipoComprobante,$afip):null;
+			print_r($compAsociado);
 		if(isset($compAsociado)){
 
 			$comprobanteAsociado=array(
@@ -243,11 +244,11 @@ class NotasCredito extends CActiveRecord
 					'Valor' 	=> $model->anulacion==1?"S":"N" // Valor 
 				)
 			);
-			$data['Opcionales']=$opcional;
+			if($TIPO_COMPROBANTE==212 ||$TIPO_COMPROBANTE==213) $data['Opcionales']=$opcional;
 		}
 			
 			
-		}
+		// }
 		return FacturaElectronica::model()->ingresarNotaCredito($data,$TIPO_COMPROBANTE,$PUNTO_VENTA,$CONCEPTO,$model,$afip);
 
 	}

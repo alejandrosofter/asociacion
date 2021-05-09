@@ -20,7 +20,7 @@ color:#57a957;
 	<tbody>
 	<?php $sum=0; foreach($data as $item) if(!$item->tieneElectronica()){ $sum+=$item->importe;?>
 	<tr class="filas" id="<?=$item->id;?>"><td style="text-align: left"><?=$item->getCuitAfip();?></td><td title="<?=Yii::app()->dateFormatter->format("dd-MM-yyyy",$item->fecha);?>"><?=$item->obraSocial->nombreOs;?></td><td id="detalle_<?=$item->id;?>"><?=$item->detalle;?></td><td ><?=$item->formFechaVto()?></td><td id="fe_<?=$item->id;?>"><?=$item->tieneFacturaElectronica();?></td><td style="text-align: right"><?=number_format($item->importe,2);?></td>
-		<td><a href="#" id="btnFactura" onclick="facturaIndividual(<?=$item->id?>)"  type="button" class="btn btn-xs btn-success glyphicon glyphicon-ok-circle"> <i class="fas fa-check-circle"></i></a>  </td>
+		<td><a href="#" id="btnFactura" onclick="facturaIndividual(<?=$item->id?>)"  type="button" class="btn btn-xs btn-success fas fa-check-circle-circle"> <i class="fas fa-check-circle"></i></a>  </td>
 	</tr>
 	<script>if(<?=$item->tieneElectronica();?>==0)facturas.push(<?=$item->id?>)</script>
 		<?php }?>

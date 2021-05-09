@@ -9,7 +9,8 @@ services:
       - ./www:/var/www/html
     links:
       - mysql:db
-
+    tty: true
+    
   mysql:
     image: mysql:5.7
     environment:

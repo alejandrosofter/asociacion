@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -av /home/alejandro/docker/asociacion/www/app/ alejandro@66.97.37.151:/var/www/oftalmologia/app/ --exclude="/protected/config/main.php" --exclude="/protected/runtime/" --exclude="/assetsFacturaElectronica/" --exclude="/assets" --progress

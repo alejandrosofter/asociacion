@@ -39,11 +39,19 @@
   'model'=>$model,
   'htmlOptions'=>array ('style'=>'width:380px','placeholder'=>'seleccione...'),
   'attribute'=>'idTipoComprobanteElectronico',
-  'data'=>CHtml::listData(TiposComprobantesElectronicos::model()->findAll(array('order'=>'nombre')), 'id', 'nombre'))
+  'data'=>CHtml::listData(TiposComprobantesElectronicos::model()->findAll(array('condition' => 'esDebito = 1','order'=>'nombre')), 'id', 'nombre'))
 ); ?>
+
 </div><div class="form">
     <?php echo $form->labelEx($model,'comprobanteAsociado',array('class'=>'')); ?>
     <?php echo $form->textField($model,'comprobanteAsociado',array('style'=>'width:90px')); ?>
+    
+    <?php $this->widget('ext.2select.ESelect2',array(
+  'model'=>$model,
+  'htmlOptions'=>array ('style'=>'width:380px','placeholder'=>'seleccione...'),
+  'attribute'=>'comprobanteAsociado_tipoComprobante',
+  'data'=>CHtml::listData(TiposComprobantesElectronicos::model()->findAll(array('condition' => 'esDebito = 0','order'=>'nombre')), 'id', 'nombre'))
+); ?> <a onclick="buscarComprobante()" class="btn btn-success">Buscar Comprobante</a>
     <?php echo $form->error($model,'comprobanteAsociado'); ?>
   </div>
   <div class="form">
@@ -78,6 +86,18 @@
   $("#NotasCredito_comprobanteAsociado").change(function(){
   cambiaNroComprobante();
 });
+function buscarComprobante()
+{
+  var tipo=$("#NotasCredito_comprobanteAsociado_tipoComprobante").val();
+  var nro=$("#NotasCredito_comprobanteAsociado").val();
+    $.getJSON("index.php?r=facturaElectronica/datosComprobanteAFIP&nro="+nro+"&idTipoComprobante="+tipo,function(res){
+      if(res){
+        swal("Bien!","Encontre el comprobante!","success");
+        console.log(res)
+      }else swal("Ops..","No encontre el comprobante!","error")
+    
+    })
+}
   function buscar(){
     var idOs=$("#NotasCredito_idObraSocial").val();
     $.getJSON("index.php?r=obrasSociales/getObraSocial&idObraSocial="+idOs,function(res){

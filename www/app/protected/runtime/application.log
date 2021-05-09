@@ -7275,3 +7275,433 @@ REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
 in /var/www/html/app/protected/models/FacturasObrasSocial.php (304)
 in /var/www/html/app/protected/controllers/FacturasObrasSocialController.php (160)
 in /var/www/html/app/index.php (13)
+2021/04/06 15:34:42 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/var/www/html/app/assets" es inválido. Verifique que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /var/www/html/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /var/www/html/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/var/www/html/a...')
+#1 /var/www/html/framework/web/CAssetManager.php(219): CAssetManager->getBasePath()
+#2 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(458): CAssetManager->publish('/var/www/html/a...', false, -1, true)
+#3 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(163): Bootstrap->getAssetsUrl()
+#4 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(124): Bootstrap->registerAssetCss('bootstrap.css')
+#5 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(102): Bootstrap->registerCoreCss()
+#6 /var/www/html/framework/base/CModule.php(388): Bootstrap->init()
+#7 /var/www/html/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#8 /var/www/html/framework/base/CApplication.php(146): CModule->preloadComponents()
+#9 /var/www/html/framework/YiiBase.php(127): CApplication->__construct('/var/www/html/a...')
+#10 /var/www/html/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/html/a...')
+#11 /var/www/html/app/index.php(13): YiiBase::createWebApplication('/var/www/html/a...')
+#12 {main}
+REQUEST_URI=/app/
+HTTP_REFERER=http://localhost/
+---
+2021/04/06 15:34:43 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/var/www/html/app/assets" es inválido. Verifique que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.' in /var/www/html/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /var/www/html/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/var/www/html/a...')
+#1 /var/www/html/framework/web/CAssetManager.php(219): CAssetManager->getBasePath()
+#2 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(458): CAssetManager->publish('/var/www/html/a...', false, -1, true)
+#3 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(163): Bootstrap->getAssetsUrl()
+#4 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(124): Bootstrap->registerAssetCss('bootstrap.css')
+#5 /var/www/html/app/protected/extensions/bootstrap/components/Bootstrap.php(102): Bootstrap->registerCoreCss()
+#6 /var/www/html/framework/base/CModule.php(388): Bootstrap->init()
+#7 /var/www/html/framework/base/CModule.php(493): CModule->getComponent('bootstrap')
+#8 /var/www/html/framework/base/CApplication.php(146): CModule->preloadComponents()
+#9 /var/www/html/framework/YiiBase.php(127): CApplication->__construct('/var/www/html/a...')
+#10 /var/www/html/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/html/a...')
+#11 /var/www/html/app/index.php(13): YiiBase::createWebApplication('/var/www/html/a...')
+#12 {main}
+REQUEST_URI=/app/
+HTTP_REFERER=http://localhost/
+---
+2021/04/06 15:35:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/06 15:35:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/14 19:10:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/14 19:10:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/20 19:51:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/20 19:51:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/21 14:03:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/04/21 14:03:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/03 16:06:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/03 16:06:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/09 14:29:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(FacturasObrasSocial))
+#7 /var/www/html/app/protected/models/FacturasObrasSocial.php(31): CActiveRecord::model('FacturasObrasSo...')
+#8 /var/www/html/app/protected/controllers/FacturasObrasSocialController.php(160): FacturasObrasSocial::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): FacturasObrasSocialController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('FacturasObrasSo...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=FacturasObrasSocial/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/09 14:29:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Cobros))
+#7 /var/www/html/app/protected/models/Cobros.php(26): CActiveRecord::model('Cobros')
+#8 /var/www/html/app/protected/controllers/CobrosController.php(22): Cobros::model()
+#9 /var/www/html/framework/web/actions/CInlineAction.php(50): CobrosController->actionConsultaPendientes()
+#10 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/html/framework/web/CWebApplication.php(276): CController->run('ConsultaPendien...')
+#19 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('cobros/Consulta...')
+#20 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/html/app/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/app/index.php?r=cobros/ConsultaPendientes
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/09 14:29:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'asociacionOftalmologica'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(NotasCredito))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('NotasCredito')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/NotasCreditoController.php(74): CActiveRecord->__construct()
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): NotasCreditoController->actionCreate()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('create')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('notasCredito/cr...')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=notasCredito/create
+HTTP_REFERER=http://localhost/app/
+---
+2021/05/09 14:31:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection falló al abrir la conexion a la base de datos: SQLSTATE[42000] [1049] Unknown database 'australoftalmologia'' in /var/www/html/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(NotasCredito))
+#7 /var/www/html/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('NotasCredito')
+#8 /var/www/html/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/html/app/protected/controllers/NotasCreditoController.php(74): CActiveRecord->__construct()
+#10 /var/www/html/framework/web/actions/CInlineAction.php(50): NotasCreditoController->actionCreate()
+#11 /var/www/html/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/html/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/html/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/html/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/html/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/html/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/html/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/html/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/html/framework/web/CWebApplication.php(276): CController->run('create')
+#20 /var/www/html/framework/web/CWebApplication.php(135): CWebApplication->runController('notasCredito/cr...')
+#21 /var/www/html/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/html/app/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/app/index.php?r=notasCredito/create
+HTTP_REFERER=http://localhost/app/
+---

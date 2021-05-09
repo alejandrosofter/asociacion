@@ -113,6 +113,25 @@ class FacturaElectronica extends CActiveRecord
 		$voucher_info = $afip->ElectronicBilling->GetVoucherInfo($factura->nroComprobante,$PUNTO_VENTA,$TIPO_COMPROBANTE); //Devuelve la información del comprobante 1 para el punto de venta 1 y el tipo de comprobante 6 (Factura B)
 		return $voucher_info;
 	}
+	public function getDatosComprobanteAFIP($nro,$idTipoComprobante,$afip=null)
+	{
+		$CUIT_EMISOR=(float) Settings::model()->getValorSistema('DATOS_EMPRESA_CUIT')*1;
+		
+		if(!isset($afip) ){
+			$url = Yii::app()->basePath.'/../assetsFacturaElectronica/afip.php/src/Afip.php';
+			include_once $url; 
+			$afip = new Afip(array('CUIT' => $CUIT_EMISOR));
+		}
+		
+		$PUNTO_VENTA=3;
+		$TIPO_COMPROBANTE=$idTipoComprobante;//$model->realizaFacturaCredito?211:11;
+		
+		$CBU_EMISOR=(float) Settings::model()->getValorSistema('DATOS_EMPRESA_CBU')*1;
+
+		return $afip->ElectronicBilling->GetVoucherInfo($nro*1,$PUNTO_VENTA,$TIPO_COMPROBANTE); //Devuelve la información del comprobante 1 para el punto de venta 1 y el tipo de comprobante 6 (Factura B)
+		
+
+	}
 	public function getDatosComprobanteNro($nro,$idOs,$afip=null)
 	{
 		$CUIT_EMISOR=(float) Settings::model()->getValorSistema('DATOS_EMPRESA_CUIT')*1;
@@ -269,6 +288,10 @@ class FacturaElectronica extends CActiveRecord
 				array(
 					'Id' 		=> 2101, // Codigo de tipo de opcion (ver tipos disponibles) 
 					'Valor' 	=> $CBU_EMISOR // Valor 
+				),
+				array(
+					'Id' 		=> 27, // Codigo de tipo de opcion (ver tipos disponibles) 
+					'Valor' 	=> "SCA" // Valor 
 				)
 			) ;
 			$data["CbteTipo"]=$TIPO_COMPROBANTE;

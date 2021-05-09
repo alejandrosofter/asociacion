@@ -121,7 +121,7 @@ return array(
 		),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=db;dbname=asociacionOftalmologica',
+			'connectionString' => 'mysql:host=db;dbname=australOftalmologia',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'vertrigo',
