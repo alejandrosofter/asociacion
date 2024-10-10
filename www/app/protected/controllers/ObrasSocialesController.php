@@ -11,12 +11,25 @@ class ObrasSocialesController extends RController
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
+	// public function filters()
+	// {
+	// 	return array(
+	// 		'accessControl', // perform access control for CRUD operations
+	// 	);
+	// }
+	// public function accessRules()
+	// {
+	// 	return array(
+	// 		array('allow',  // allow all users to perform 'index' and 'view' actions
+	// 			'actions'=>array('index',"create","delete","view"),
+	// 			'users'=>array('@'),
+	// 		),
+			
+	// 		array('deny',  // deny all users
+	// 			'users'=>array('*'),
+	// 		),
+	// 	);
+	// }
 	public function init()
 	{
 		$this->layout="//layouts/column1";
@@ -69,11 +82,7 @@ class ObrasSocialesController extends RController
 		}
 		return "";
 	}
-	public function accessRules()
-	{
-		return array(
-		);
-	}
+	
 	public function actionbuscarColumnas()
 	{
 		$model=ObrasSociales::model()->findByPk($_GET['idObraSocial']);

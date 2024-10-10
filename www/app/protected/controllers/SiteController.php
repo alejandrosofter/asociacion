@@ -6,7 +6,8 @@ class SiteController extends Controller
 	 * Declares class-based actions.
 	 */
 	
-
+	 public $layout='//layouts/web';
+	
 	
 	public function actions()
 	{
@@ -39,7 +40,7 @@ class SiteController extends Controller
 	        	$this->render('error', $error);
 	    }
 	}
-
+	
 	/**
 	 * Displays the contact page
 	 */

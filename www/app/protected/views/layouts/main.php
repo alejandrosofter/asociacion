@@ -112,7 +112,7 @@
 		<?php if(isset(Yii::app()->user->id)) $usuario=Usuarios::model()->findByPk(Yii::app()->user->id);?>
 		<?php $this->widget('bootstrap.widgets.TbNavbar', array(
     'type'=>'inverse', // null or 'inverse'
-    "brand"=>"OFTAL V3.0",
+    "brand"=>"FACTU WEB",
     'brandUrl'=>'index.php',
 
     'collapse'=>true, // requires bootstrap-responsive.css
@@ -263,6 +263,8 @@ array('label'=>'Ver Facturas', 'url'=>'index.php?r=facturasProfesional'),
 		 '---',
                     array('label'=>'Impuestos', 'url'=>'index.php?r=impuestos'),
                     array('label'=>'Tabla Retenciones', 'url'=>'index.php?r=tablaRetenciones'),
+					'---',
+                    array('label'=>'Salir', 'url'=>'index.php?r=site/logout'),
              
                 )),
             ),
