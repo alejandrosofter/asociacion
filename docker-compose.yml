@@ -8,20 +8,21 @@ services:
   host:
     build: imagenServer/
     ports:
-      - 80:80
+      - 81:80
     volumes:
-      - ./www:/var/www/html
+      - ./www:/var/www/html/
+      # - ./config:/etc/apache2/
     links:
       - mysql:db
     tty: true
-    network:
-      name: traefik
+    networks:
+      - traefik
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.medfact_apptest.rule=Host(`apptest.medfact.com.ar`)"
       - "traefik.http.routers.medfact_apptest.entrypoints=websecure"
       - "traefik.http.routers.medfact_apptest.tls=true"
-      - "traefik.http.services.medfact_apptest.loadbalancer.server.port=80"
+      - "traefik.http.services.medfact_apptest.loadbalancer.server.port=81"
       - "traefik.http.routers.medfact_apptest.tls.certresolver=myresolver"
   mysql:
     image: mysql:5.7
@@ -40,8 +41,8 @@ services:
       - 3306:3306
     command: mysqld --sql_mode="" --character-set-server=utf8 --collation-server=utf8_slovenian_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
     restart: on-failure
-    network:
-      name: traefik
+    networks:
+      - traefik
   # phpmyadmin:
   #     depends_on:
   #      - mysql
